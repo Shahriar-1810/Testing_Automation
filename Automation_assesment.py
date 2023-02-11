@@ -13,6 +13,7 @@ driver.implicitly_wait(3)
 #Navigate to url http://automationexercise.com
 driver.get("http://automationexercise.com")
 driver.maximize_window()
+
 #Verify that home page is visible successfully
 expected_title = "Automation Exercise"
 expected_url = "https://automationexercise.com/"
