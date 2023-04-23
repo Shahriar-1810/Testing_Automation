@@ -28,12 +28,12 @@ else:
     print("Incorrect site")
 
 time.sleep(3)
-#Add products to cart
+
+##Add products to cart
 
 #driver.find_element(By.CSS_SELECTOR, 'a[data-product-id="1"]').click()
 driver.find_element(By.LINK_TEXT, 'Add to cart').click()
 time.sleep(3)
-
 
 driver.find_element(By.XPATH, '//*[@id="cartModal"]/div/div/div[3]/button').click()
 time.sleep(3)
@@ -75,7 +75,7 @@ time.sleep(2)
 driver.find_element(By.CSS_SELECTOR,'button[data-qa="signup-button"]').click()
 time.sleep(3)
 
-#Filling up the whole form for registration
+##Filling up the whole form for registration
 #gender
 driver.find_element(By.ID,'id_gender1').click()
 time.sleep(2)
@@ -103,36 +103,43 @@ time.sleep(1)
 driver.find_element(By.NAME,'newsletter').click()
 time.sleep(2)
 
-
+#firstname
 driver.find_element(By.ID,'first_name').send_keys("Nafis")
 time.sleep(2)
 
+#Lastname
 driver.find_element(By.ID,'last_name').send_keys("Iqbal")
 time.sleep(2)
 
+#company
 driver.find_element(By.ID,'company').send_keys("Kinetik")
 time.sleep(2)
 
+#address1
 driver.find_element(By.ID,'address1').send_keys("USA")
 time.sleep(2)
 
-
+#address2
 country_select = Select(driver.find_element(By.ID,"country"))
 country_select.select_by_value("United States")
 
-
+#address3
 driver.find_element(By.ID,'state').send_keys("USA")
 time.sleep(2)
 
+#address4
 driver.find_element(By.ID,'city').send_keys("New York")
 time.sleep(2)
 
+#address5
 driver.find_element(By.ID,'zipcode').send_keys("1216")
 time.sleep(2)
 
+#mobile
 driver.find_element(By.ID,'mobile_number').send_keys("0194830137621")
 time.sleep(1)
 
+#Clicking on create-account button
 driver.find_element(By.CSS_SELECTOR,'button[data-qa="create-account"]').click()
 time.sleep(2)
 
@@ -167,7 +174,7 @@ time.sleep(2)
 driver.find_element(By.XPATH, '//*[@id="do_action"]/div[1]/div/div/a').click()
 time.sleep(2)
 
-#Address details review
+#Checking address details review is correct or not
 expected_name= "Mr. Nafis Iqbal"
 expected_address1= "USA"
 expected_address2= "New York USA 1216"
@@ -186,7 +193,7 @@ else:
     print("Wrong address details")
 
 
-#order review
+#order review is correct or not
 Product_name = "Blue Top"
 printed_product_name = driver.find_element(By.XPATH,'//*[@id="product-1"]/td[2]/h4/a').text
 
@@ -196,7 +203,8 @@ else:
     print("wrong product")
 
 time.sleep(3)
-#Comment in text area
+
+#Adding comment in text area
 driver.find_element(By.XPATH,'//*[@id="ordermsg"]/textarea').send_keys("Great Website to practice automation")
 time.sleep(2)
 
